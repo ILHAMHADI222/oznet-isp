@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OZNET ISP — Internet Cepat untuk Kota Tegal</title>
+    <meta name="description" content="OZNET adalah penyedia layanan internet (ISP) rumahan & bisnis di Kota Tegal. Stabil, cepat, dan support ramah 24/7." />
+    <meta name="theme-color" content="#0ea5e9" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="OZNET ISP — Internet Cepat untuk Kota Tegal" />
+    <meta property="og:description" content="Internet stabil untuk rumah & bisnis di Kota Tegal. Paket fleksibel, pemasangan cepat, dukungan 24/7." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://oznet.example" />
+    <meta property="og:image" content="https://dummyimage.com/1200x630/0ea5e9/ffffff&text=OZNET+ISP" />
+
+    <style>
+      :root {
+        --bg: #0b1020; /* Night */
+        --card: #0f172a; /* Slate-900 */
+        --card2: #111827; /* Gray-900 */
+        --muted: #93a4c1; /* slate-400 */
+        --text: #e6eefc; /* near white */
+        --acc: #0ea5e9; /* sky-500 */
+        --acc-2: #22d3ee; /* cyan-400 */
+        --ok: #10b981; /* emerald */
+        --warn: #f59e0b; /* amber */
+        --danger: #ef4444; /* red */
+        --radius: 18px;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: linear-gradient(180deg, #0b1020 0%, #0b1020 40%, #0a1326 100%);
+        color: var(--text);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        max-width: 1200px;
+        margin-inline: auto;
+        padding: 0 20px;
+      }
+      .btn {
+        display: inline-flex;
+        gap: 0.6rem;
+        align-items: center;
+        border-radius: 9999px;
+        padding: 0.9rem 1.25rem;
+        font-weight: 600;
+        background: var(--acc);
+        color: #00111a;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: var(--shadow);
+        transition: 0.25s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        filter: saturate(110%);
+      }
+      .btn.sec {
+        background: #0c1a33;
+        color: var(--text);
+        border-color: #1f2a44;
+      }
+      .chip {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.4rem 0.7rem;
+        border: 1px solid #19314f;
+        background: rgba(14, 165, 233, 0.12);
+        color: #bfeaff;
+        border-radius: 999px;
+        font-size: 0.82rem;
+      }
+
+      /* Navbar */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 16, 32, 0.7);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .brand .logo {
+        inline-size: 40px;
+        block-size: 40px;
+        border-radius: 12px;
+        background: radial-gradient(60% 60% at 50% 30%, #31d3ff 0%, #0ea5e9 50%, #0b1020 100%);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 8px 25px rgba(34, 211, 238, 0.25);
+      }
+      .brand .logo svg {
+        width: 22px;
+        height: 22px;
+        fill: #00121a;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .nav-links a {
+        padding: 0.6rem 0.9rem;
+        border-radius: 10px;
+        color: #cfe7ff;
+        font-weight: 600;
+      }
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .menu-btn {
+        display: none;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 72px 0 40px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 32px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 4.6vw, 3.6rem);
+        line-height: 1.05;
+        margin: 0 0 12px;
+      }
+      .hero p {
+        font-size: clamp(1rem, 1.7vw, 1.15rem);
+        color: #cbd7ee;
+        max-width: 60ch;
+      }
+      .hero-card {
+        background: linear-gradient(180deg, #0e162e, #0b1225);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 14px 0 22px;
+      }
+      .hero-visual {
+        position: relative;
+      }
+      .glass {
+        position: absolute;
+        inset: auto 0 0 auto;
+        transform: translate(10%, 10%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45);
+      }
+
+      /* Sections */
+      section {
+        padding: 56px 0;
+      }
+      .section-title {
+        font-size: clamp(1.4rem, 2.6vw, 2rem);
+        margin: 0 0 10px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        background: linear-gradient(180deg, #0f172a, #0b1327);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin: 0.3rem 0 0.2rem;
+        font-size: 1.1rem;
+      }
+
+      /* Pricing */
+      .pricing-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .plan {
+        background: linear-gradient(180deg, #0e152c, #0a172d);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 22px;
+        position: relative;
+        overflow: hidden;
+      }
+      .plan.best {
+        outline: 2px solid var(--acc);
+        box-shadow: 0 0 0 6px rgba(14, 165, 233, 0.18);
+      }
+      .price {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      .speed {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        background: rgba(34, 211, 238, 0.12);
+        border: 1px solid #1c3e52;
+        color: #c9fbff;
+        padding: 0.35rem 0.6rem;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+      .features {
+        margin: 12px 0 14px;
+      }
+      .features li {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        margin: 0.45rem 0;
+      }
+
+      /* Map */
+      .map {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      /* FAQ */
+      details {
+        background: linear-gradient(180deg, #0f172a, #0b1429);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        margin: 10px 0;
+        padding: 14px;
+      }
+      details summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 26px 0;
+        color: #c8d7ef;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .plans {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-3 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+        .menu-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #0b162e;
+          padding: 0.55rem 0.8rem;
+          border-radius: 12px;
+        }
+        .plans {
+          grid-template-columns: 1fr;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Tiny utilities */
+      .spacer {
+        height: 16px;
+      }
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 16px 0;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#home" class="brand" aria-label="OZNET ISP Kota Tegal">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-label="logo oznet"><path d="M12 2l2.6 5.3L20 8l-4 4 .9 5.7L12 15l-4.9 2.7L8 12 4 8l5.4-.7L12 2z" /></svg>
+          </span>
+          <span>OZNET <span style="color: var(--acc-2)">ISP</span></span>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="#paket">Paket</a>
+          <a href="#cakupan">Cakupan</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontak" class="btn">Hubungi Kami</a>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰ Menu</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="chip">Resmi beroperasi di <strong>Kota Tegal</strong></span>
+          <h1>Internet <span style="background: linear-gradient(90deg, var(--acc), var(--acc-2)); -webkit-background-clip: text; background-clip: text; color: transparent">Stabil & Kencang</span> untuk Rumah & Bisnis Anda</h1>
+          <p>OZNET menyediakan layanan internet fiber dan nirkabel dengan jangkauan luas di wilayah Kota Tegal dan sekitarnya. Pemasangan cepat, SLA jelas, dan dukungan teknisi yang responsif.</p>
+          <div class="badge-row">
+            <span class="chip">⚡ Upto 200 Mbps</span>
+            <span class="chip">🛡️ Anti FUP berlebihan</span>
+            <span class="chip">📞 Support 24/7</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="https://wa.me/6281234567890?text=Halo%20OZNET%2C%20saya%20ingin%20berlangganan" target="_blank" rel="noopener">Chat WhatsApp</a>
+            <a class="btn sec" href="#paket">Lihat Paket</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="row" style="justify-content: space-between">
+              <strong>Status Jaringan</strong>
+              <span class="chip" style="background: rgba(16, 185, 129, 0.12); border-color: #164538; color: #caffe1">● Online</span>
+            </div>
+            <div class="divider"></div>
+            <div class="row" style="justify-content: space-between">
+              <span class="muted">Latency rata-rata</span>
+              <strong>4–7 ms</strong>
+            </div>
+            <div class="spacer"></div>
+            <div class="row" style="justify-content: space-between">
+              <span class="muted">Uptime bulan ini</span>
+              <strong>99.8%</strong>
+            </div>
+            <div class="glass">
+              <small class="muted">Alamat Kantor</small>
+              <div><strong>Jl. Contoh No. 123</strong><br />Kota Tegal, Jawa Tengah 52100</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- KEUNGGULAN -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Kenapa pilih OZNET?</h2>
+        <p class="muted">Kami merancang jaringan untuk konsistensi kecepatan, bukan sekadar angka di brosur.</p>
+        <div class="grid-3" style="margin-top: 14px">
+          <div class="card">
+            <h3>Jaringan Andal</h3>
+            <p class="muted">Arsitektur ring &amp; backbone terukur, monitoring proaktif, dan mitigasi gangguan yang jelas.</p>
+          </div>
+          <div class="card">
+            <h3>Pemasangan Cepat</h3>
+            <p class="muted">Tim teknisi lokal Kota Tegal siap pemasangan dan aktivasi dalam hitungan jam.</p>
+          </div>
+          <div class="card">
+            <h3>Dukungan 24/7</h3>
+            <p class="muted">Saluran bantuan lewat WhatsApp, telepon, &amp; tiket. Tindak lanjut maksimal 1×24 jam.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAKET -->
+    <section id="paket">
+      <div class="container">
+        <div class="pricing-head">
+          <div>
+            <h2 class="section-title">Paket Internet</h2>
+            <p class="muted">Harga hemat, kuota fair use, dan kecepatan stabil di jam sibuk.</p>
+          </div>
+          <div>
+            <span class="chip">Harga sudah termasuk PPN*</span>
+          </div>
+        </div>
+
+        <div class="plans">
+          <div class="plan">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">15 Mbps</span>
+              <span class="muted">Rumahan</span>
+            </div>
+            <div class="price">Rp169.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <ul class="features">
+              <li>✔️ Unlimited</li>
+              <li>✔️ 1 perangkat IPTV</li>
+              <li>✔️ Router standar</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6281234567890?text=Minat%20Paket%2015Mbps" target="_blank" rel="noopener">Langganan</a>
+          </div>
+
+          <div class="plan best">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">30 Mbps</span>
+              <span class="muted">Favorit</span>
+            </div>
+            <div class="price">Rp219.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <ul class="features">
+              <li>✔️ Unlimited</li>
+              <li>✔️ Router dual-band</li>
+              <li>✔️ Bantuan prioritas</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6281234567890?text=Minat%20Paket%2030Mbps" target="_blank" rel="noopener">Langganan</a>
+          </div>
+
+          <div class="plan">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">50 Mbps</span>
+              <span class="muted">Keluarga</span>
+            </div>
+            <div class="price">Rp299.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <ul class="features">
+              <li>✔️ Unlimited</li>
+              <li>✔️ Router dual-band</li>
+              <li>✔️ Bebas instalasi* promo</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6281234567890?text=Minat%20Paket%2050Mbps" target="_blank" rel="noopener">Langganan</a>
+          </div>
+
+          <div class="plan">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">Dedicated</span>
+              <span class="muted">Bisnis</span>
+            </div>
+            <div class="price">Custom</div>
+            <ul class="features">
+              <li>✔️ SLA tertulis</li>
+              <li>✔️ IP Publik / Static</li>
+              <li>✔️ Monitoring &amp; laporan</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6281234567890?text=Konsultasi%20Internet%20Bisnis%20OZNET" target="_blank" rel="noopener">Konsultasi</a>
+          </div>
+        </div>
+        <p class="muted" style="margin-top: 10px">*Syarat & ketentuan berlaku.</p>
+      </div>
+    </section>
+
+    <!-- CAKUPAN AREA (KOTA TEGAL) -->
+    <section id="cakupan">
+      <div class="container">
+        <h2 class="section-title">Cakupan Area</h2>
+        <p class="muted">Fokus layanan di <strong>Kota Tegal</strong> dan sekitarnya: Tegal Barat, Tegal Timur, Margadana, dan Tegal Selatan. Cek alamat Anda melalui peta di bawah ini atau hubungi tim kami.</p>
+        <div class="map" style="margin-top: 14px">
+          <iframe title="Peta Kota Tegal" src="https://www.google.com/maps?q=Kota%20Tegal%2C%20Jawa%20Tengah&output=embed" width="100%" height="360" style="border: 0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang">
+      <div class="container">
+        <h2 class="section-title">Tentang OZNET</h2>
+        <div class="grid-3" style="align-items: stretch">
+          <div class="card" style="grid-column: span 2">
+            <p>
+              OZNET adalah penyedia layanan internet lokal yang berdomisili di <strong>Kota Tegal</strong>. Kami percaya internet yang baik adalah kombinasi antara infrastruktur yang tepat, tim yang kompeten, dan layanan pelanggan yang
+              manusiawi. Kami tumbuh bersama masyarakat, UMKM, sekolah, hingga perkantoran.
+            </p>
+            <div class="divider"></div>
+            <div class="row">
+              <span class="chip">NOC & Monitoring</span>
+              <span class="chip">Teknisi Bersertifikat</span>
+              <span class="chip">Billing Otomatis</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Legal & Kontak</h3>
+            <p class="muted">Alamat: Jl. Contoh No. 123, Kota Tegal 52100<br />Email: halo@oznet.id<br />Telp/WA: 0812-3456-7890</p>
+            <a class="btn" href="#kontak">Kirim Pesan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI & FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card">
+            <h3>Testimoni</h3>
+            <p class="muted">“Sejak pakai OZNET, zoom meeting kantor lebih stabil. Respon tiket juga cepat.” — <strong>Andi, Tegal Timur</strong></p>
+            <div class="divider"></div>
+            <p class="muted">“Harga masuk akal, pemasangan rapi, teknisi ramah.” — <strong>Sri, Margadana</strong></p>
+          </div>
+          <div class="card" style="grid-column: span 2">
+            <h3>Pertanyaan Umum</h3>
+            <details>
+              <summary>Berapa lama proses pemasangan?</summary>
+              <p>Rata-rata 1–3 hari kerja sejak survey lokasi dan konfirmasi ketersediaan jaringan.</p>
+            </details>
+            <details>
+              <summary>Apakah bisa minta IP Publik?</summary>
+              <p>Bisa. Untuk pelanggan bisnis tersedia opsi IP statis. Hubungi tim sales kami.</p>
+            </details>
+            <details>
+              <summary>Metode pembayaran apa saja?</summary>
+              <p>Transfer bank, virtual account, e-wallet populer, dan auto-debit untuk pelanggan tertentu.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card" style="grid-column: span 2">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="muted">Tanyakan ketersediaan alamat, promo terbaru, atau jadwalkan survey.</p>
+            <form class="row" onsubmit="sendWA(event)">
+              <input
+                aria-label="Nama"
+                required
+                placeholder="Nama"
+                id="f_name"
+                style="flex: 1; min-width: 200px; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); background: #0b162e; color: var(--text)"
+              />
+              <input
+                aria-label="Alamat"
+                required
+                placeholder="Alamat Lengkap di Kota Tegal"
+                id="f_addr"
+                style="flex: 2; min-width: 260px; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); background: #0b162e; color: var(--text)"
+              />
+              <select aria-label="Paket" id="f_pkg" style="padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); background: #0b162e; color: var(--text)">
+                <option>Paket 15 Mbps</option>
+                <option selected>Paket 30 Mbps</option>
+                <option>Paket 50 Mbps</option>
+                <option>Bisnis / Dedicated</option>
+              </select>
+              <button class="btn" type="submit">Kirim ke WhatsApp</button>
+            </form>
+          </div>
+          <div class="card">
+            <h3>Jam Operasional</h3>
+            <p class="muted">Senin–Jumat: 08.00–21.00<br />Sabtu–Minggu: 09.00–18.00</p>
+            <a class="btn sec" href="tel:+6281234567890">📞 0812-3456-7890</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container row" style="justify-content: space-between">
+        <div>© <span id="year"></span> OZNET ISP — Kota Tegal</div>
+        <div class="muted">Dibuat dengan ♥ untuk jaringan yang lebih baik.</div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      menuBtn?.addEventListener("click", () => {
+        if (getComputedStyle(navLinks).display === "none") {
+          navLinks.style.display = "flex";
+          navLinks.style.flexDirection = "column";
+          navLinks.style.gap = "0";
+          navLinks.querySelectorAll("a").forEach((a) => {
+            a.style.padding = ".9rem 0";
+            a.style.borderBottom = "1px solid rgba(255,255,255,.06)";
+          });
+        } else {
+          navLinks.style.display = "none";
+        }
+      });
+
+      // Smooth anchor scroll
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href").slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // WA helper
+      function sendWA(e) {
+        e.preventDefault();
+        const name = document.getElementById("f_name").value.trim();
+        const addr = document.getElementById("f_addr").value.trim();
+        const pkg = document.getElementById("f_pkg").value;
+        const text = encodeURIComponent(`Halo OZNET, saya ${name}. Ingin cek ketersediaan ${pkg} di alamat: ${addr} (Kota Tegal).`);
+        const phone = "6281234567890";
+        window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+      }
+
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "InternetServiceProvider",
+        "name": "OZNET ISP",
+        "url": "https://oznet.example",
+        "areaServed": "Kota Tegal, Jawa Tengah",
+        "telephone": "+62 812-3456-7890",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Contoh No. 123",
+          "addressLocality": "Kota Tegal",
+          "addressRegion": "Jawa Tengah",
+          "postalCode": "52100",
+          "addressCountry": "ID"
+        },
+        "sameAs": ["https://facebook.com/oznet", "https://instagram.com/oznet"]
+      }
+    </script>
+  </body>
+</html>
