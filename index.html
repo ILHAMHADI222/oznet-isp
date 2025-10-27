@@ -6,355 +6,159 @@
     <title>OZNET ISP — Internet Cepat untuk Kota Tegal</title>
     <meta name="description" content="OZNET adalah penyedia layanan internet (ISP) rumahan & bisnis di Kota Tegal. Stabil, cepat, dan support ramah 24/7." />
     <meta name="theme-color" content="#1ab553" />
-
     <!-- Open Graph -->
     <meta property="og:title" content="OZNET ISP — Internet Cepat untuk Kota Tegal" />
     <meta property="og:description" content="Internet stabil untuk rumah & bisnis di Kota Tegal. Paket fleksibel, pemasangan cepat, dukungan 24/7." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://oznet.example" />
-    <meta property="og:image" content="images/og-oznet.jpg" />
+    <meta property=\"og:image\" content=\"/images/og-oznet.jpg\" />
 
     <style>
       :root {
-        --bg: #ffffff;
-        --text: #0b1f12;
-        --muted: #5b7763;
-        --acc: #1ab553;
-        --acc-2: #29c765;
-        --line: #e6f3ea;
-        --card: #ffffff;
-        --card2: #f7fbf8;
+        /* === PALET HIJAU PUTIH === */
+        --bg: #ffffff;                 /* latar putih */
+        --text: #0b1f12;               /* teks gelap kehijauan */
+        --muted: #5b7763;              /* teks sekunder */
+        --acc: #1ab553;                /* hijau utama */
+        --acc-2: #29c765;              /* hijau lebih terang (aksen) */
+        --line: #e6f3ea;               /* garis/border lembut */
+        --card: #ffffff;               /* kartu putih */
+        --card2: #f7fbf8;              /* permukaan lembut */
         --radius: 18px;
         --shadow: 0 10px 30px rgba(11, 31, 18, 0.08);
       }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0; padding: 0;
         font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
         background: var(--bg);
         color: var(--text);
       }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      .container {
-        max-width: 1200px;
-        margin-inline: auto;
-        padding: 0 20px;
-      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .container { max-width: 1200px; margin-inline: auto; padding: 0 20px; }
 
-      /* Buttons */
+      /* === Buttons === */
       .btn {
-        display: inline-flex;
-        gap: 0.6rem;
-        align-items: center;
-        border-radius: 9999px;
-        padding: 0.9rem 1.25rem;
-        font-weight: 700;
-        background: var(--acc);
-        color: #fff;
-        border: 1px solid var(--acc);
-        box-shadow: var(--shadow);
-        transition: 0.25s ease;
-        cursor: pointer;
+        display: inline-flex; gap: .6rem; align-items: center;
+        border-radius: 9999px; padding: .9rem 1.25rem; font-weight: 700;
+        background: var(--acc); color: #ffffff;
+        border: 1px solid var(--acc); box-shadow: var(--shadow);
+        transition: .25s ease; cursor: pointer;
       }
-      .btn:hover {
-        transform: translateY(-1px);
-        filter: saturate(110%);
-      }
+      .btn:hover { transform: translateY(-1px); filter: saturate(110%); }
       .btn.sec {
-        background: #fff;
-        color: var(--acc);
+        background: #ffffff; color: var(--acc);
         border: 1.5px solid var(--acc);
       }
       .chip {
-        display: inline-flex;
-        gap: 0.5rem;
-        align-items: center;
-        padding: 0.4rem 0.7rem;
-        border: 1px solid var(--line);
-        background: #ebfbf1;
-        color: #116c35;
-        border-radius: 999px;
-        font-size: 0.82rem;
-        font-weight: 600;
+        display: inline-flex; gap: .5rem; align-items: center;
+        padding: .4rem .7rem; border: 1px solid var(--line);
+        background: #ebfbf1; color: #116c35; border-radius: 999px;
+        font-size: .82rem; font-weight: 600;
       }
 
-      /* Navbar */
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--line);
-      }
-      .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 0;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-weight: 800;
-        letter-spacing: 0.2px;
-        color: var(--acc);
-      }
-      .brand .logo {
-        inline-size: 40px;
-        block-size: 40px;
-        border-radius: 12px;
-        background: #fff;
-        display: grid;
-        place-items: center;
-        box-shadow: 0 8px 25px rgba(26, 181, 83, 0.25);
-        border: 1px solid var(--line);
-      }
-      .nav-links {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-      .nav-links a {
-        padding: 0.6rem 0.9rem;
-        border-radius: 10px;
-        color: #0b1f12;
-        font-weight: 700;
-      }
-      .nav-links a:hover {
-        background: var(--card2);
-      }
-      .menu-btn {
-        display: none;
-      }
+      /* === Navbar === */
+      .nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+      .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+      .brand { display: flex; align-items: center; gap: .75rem; font-weight: 800; letter-spacing: .2px; color: var(--acc); }
+      .brand .logo { inline-size: 40px; block-size: 40px; border-radius: 12px; background:#fff url('/images/oznet-logo.png') center/contain no-repeat; display: grid; place-items: center; box-shadow: 0 8px 25px rgba(26,181,83,.25); border:1px solid var(--line);} 
+      .brand .logo svg { display:none; }
+      .nav-links { display: flex; gap: 1rem; align-items: center; }
+      .nav-links a { padding: .6rem .9rem; border-radius: 10px; color: #0b1f12; font-weight: 700; }
+      .nav-links a:hover { background: var(--card2); }
+      .menu-btn { display: none; }
 
-      /* Hero */
-      .hero {
-        padding: 72px 0 40px;
-        background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%);
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 32px;
-        align-items: center;
-      }
-      .hero h1 {
-        font-size: clamp(2rem, 4.6vw, 3.6rem);
-        line-height: 1.05;
-        margin: 0 0 12px;
-        color: #0b1f12;
-      }
-      .hero h1 .accent {
-        background: linear-gradient(90deg, var(--acc), var(--acc-2));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .hero p {
-        font-size: clamp(1rem, 1.7vw, 1.15rem);
-        color: #365242;
-        max-width: 60ch;
-      }
-      .hero-card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 18px;
-        box-shadow: var(--shadow);
-      }
-      .badge-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-        margin: 14px 0 22px;
-      }
+      /* === Hero === */
+      .hero { padding: 72px 0 40px; background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); }
+      .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
+      .hero h1 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1.05; margin: 0 0 12px; color: #0b1f12; }
+      .hero h1 .accent { background: linear-gradient(90deg, var(--acc), var(--acc-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .hero p { font-size: clamp(1rem, 1.7vw, 1.15rem); color: #365242; max-width: 60ch; }
+      .hero-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+      .badge-row { display: flex; flex-wrap: wrap; gap: .6rem; margin: 14px 0 22px; }
+      .hero-visual { position: relative; }
 
-      /* Sections */
-      section {
-        padding: 56px 0;
-      }
-      .section-title {
-        font-size: clamp(1.4rem, 2.6vw, 2rem);
-        margin: 0 0 10px;
-        color: #0b1f12;
-      }
-      .muted {
-        color: var(--muted);
-      }
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 18px;
-        box-shadow: var(--shadow);
-      }
-      .card h3 {
-        margin: 0.3rem 0 0.2rem;
-        font-size: 1.1rem;
-        color: #0b1f12;
-      }
+      /* === Sections === */
+      section { padding: 56px 0; }
+      .section-title { font-size: clamp(1.4rem, 2.6vw, 2rem); margin: 0 0 10px; color: #0b1f12; }
+      .muted { color: var(--muted); }
 
-      /* Pricing */
-      .pricing-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        margin-bottom: 14px;
-      }
-      .plans {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
-      .plan {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 22px;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        transition: 0.2s ease;
-      }
-      .plan:hover {
-        outline: 2px solid var(--acc);
-        box-shadow: 0 0 0 6px rgba(26, 181, 83, 0.12);
-      }
-      .plan.best {
-        outline: 2px solid var(--acc);
-        box-shadow: 0 0 0 6px rgba(26, 181, 83, 0.18);
-      }
-      .price {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #0b1f12;
-      }
-      .speed {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        background: #ebfbf1;
-        border: 1px solid var(--acc);
-        color: #0b7a3a;
-        padding: 0.35rem 0.6rem;
-        border-radius: 999px;
-        font-weight: 700;
-      }
-      .features {
-        margin: 12px 0 14px;
-      }
-      .features li {
-        display: flex;
-        gap: 0.6rem;
-        align-items: flex-start;
-        margin: 0.45rem 0;
-      }
-      .order-wa {
-        cursor: pointer;
-      }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+      .card h3 { margin: .3rem 0 .2rem; font-size: 1.1rem; color: #0b1f12; }
 
-      /* Map */
-      .map {
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-      }
+      /* === Pricing === */
+      .pricing-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+      .plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .plan { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; position: relative; overflow: hidden; }
+      .plan.best { outline: 2px solid var(--acc); box-shadow: 0 0 0 6px rgba(26,181,83, .18); }
+      .price { font-size: 2rem; font-weight: 800; color: #0b1f12; }
+      .speed { display: inline-flex; align-items: center; gap: .45rem; background: #ebfbf1; border: 1px solid var(--acc); color: #0b7a3a; padding: .35rem .6rem; border-radius: 999px; font-weight: 700; }
+      .features { margin: 12px 0 14px; }
+      .features li { display: flex; gap: .6rem; align-items: flex-start; margin: .45rem 0; }
 
-      /* FAQ */
-      details {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        margin: 10px 0;
-        padding: 14px;
-      }
-      details summary {
-        cursor: pointer;
-        font-weight: 700;
-      }
+      /* === Map === */
+      .map { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
 
-      /* Footer */
-      footer {
-        border-top: 1px solid var(--line);
-        padding: 26px 0;
-        color: #466453;
-        background: #fff;
-      }
+      /* === FAQ === */
+      details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin: 10px 0; padding: 14px; }
+      details summary { cursor: pointer; font-weight: 700; }
 
-      /* Responsive */
+      /* === Footer === */
+      footer { border-top: 1px solid var(--line); padding: 26px 0; color: #466453; background: #ffffff; }
+
+      /* === Responsive === */
       @media (max-width: 980px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 18px;
-        }
-        .plans {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .grid-3 {
-          grid-template-columns: 1fr 1fr;
-        }
+        .hero-grid { grid-template-columns: 1fr; gap: 18px; }
+        .plans { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: 1fr 1fr; }
       }
       @media (max-width: 640px) {
-        .nav-links {
-          display: none;
-        }
-        .menu-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          border: 1px solid var(--line);
-          background: #fff;
-          padding: 0.55rem 0.8rem;
-          border-radius: 12px;
-          color: var(--acc);
-          font-weight: 700;
-        }
-        .plans {
-          grid-template-columns: 1fr;
-        }
-        .grid-3 {
-          grid-template-columns: 1fr;
-        }
+        /* Nav */
+        .nav-inner{padding:10px 0}
+        .nav-links { display: none; }
+        .menu-btn { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--line); background: #fff; padding: 0.6rem 0.8rem; border-radius: 12px; color: var(--acc); font-weight: 700; }
+
+        /* Layout */
+        .container{padding:0 16px}
+        .hero{padding:56px 0 24px}
+        .hero-grid{grid-template-columns: 1fr; gap:14px}
+        .badge-row{gap:.45rem}
+
+        /* Grids */
+        .plans{grid-template-columns: 1fr}
+        .grid-3{grid-template-columns: 1fr}
+
+        /* Cards & plans */
+        .card{padding:16px;border-radius:14px}
+        .plan{padding:16px}
+        .price{font-size:1.6rem}
+
+        /* Forms */
+        form.row{gap:8px}
+        form.row > *{flex:1 1 100%}
+
+        /* Buttons become full width when stacked */
+        .row .btn{flex:1 1 100%; justify-content:center}
       }
 
-      /* Utils */
-      .spacer {
-        height: 16px;
+      /* Ultra-small phones */
+      @media (max-width: 400px){
+        .hero h1{font-size:1.8rem}
+        .chip{font-size:.75rem}
+        .brand span{font-size:1rem}
       }
-      .divider {
-        height: 1px;
-        background: var(--line);
-        margin: 16px 0;
+        .menu-btn { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--line); background: #ffffff; padding: .55rem .8rem; border-radius: 12px; color: var(--acc); font-weight: 700; }
+        .plans { grid-template-columns: 1fr; }
+        .grid-3 { grid-template-columns: 1fr; }
       }
-      .row {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .center {
-        text-align: center;
-      }
+
+      /* === Utils === */
+      .spacer { height: 16px; }
+      .divider { height: 1px; background: var(--line); margin: 16px 0; }
+      .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+      .center { text-align: center; }
     </style>
   </head>
   <body>
@@ -363,11 +167,10 @@
       <div class="container nav-inner">
         <a href="#home" class="brand" aria-label="OZNET ISP Kota Tegal">
           <span class="logo" aria-hidden="true">
-            <img src="images/og-oznet.jpg" alt="Logo OZNET ISP" width="32" height="32" loading="lazy" />
+            <svg viewBox="0 0 24 24" role="img" aria-label="logo oznet"><path d="M12 2l2.6 5.3L20 8l-4 4 .9 5.7L12 15l-4.9 2.7L8 12 4 8l5.4-.7L12 2z" /></svg>
           </span>
           <span>OZNET <span style="color: var(--acc)">ISP</span></span>
         </a>
-
         <div class="nav-links" id="navLinks">
           <a href="#paket">Paket</a>
           <a href="#cakupan">Cakupan</a>
@@ -384,7 +187,7 @@
       <div class="container hero-grid">
         <div>
           <span class="chip">Resmi beroperasi di <strong>Kota Tegal</strong></span>
-          <h1>Internet <span class="accent">Stabil &amp; Kencang</span> untuk Rumah &amp; Bisnis Anda</h1>
+          <h1>Internet <span class="accent">Stabil & Kencang</span> untuk Rumah & Bisnis Anda</h1>
           <p>OZNET menyediakan layanan internet fiber dan nirkabel dengan jangkauan luas di wilayah Kota Tegal dan sekitarnya. Pemasangan cepat, SLA jelas, dan dukungan teknisi yang responsif.</p>
           <div class="badge-row">
             <span class="chip">⚡ Upto 200 Mbps</span>
@@ -425,7 +228,7 @@
         <div class="grid-3" style="margin-top: 14px">
           <div class="card">
             <h3>Jaringan Andal</h3>
-            <p class="muted">Arsitektur ring &amp; backbone terukur, monitoring proaktif, dan mitigasi gangguan yang jelas.</p>
+            <p class="muted">Arsitektur ring & backbone terukur, monitoring proaktif, dan mitigasi gangguan yang jelas.</p>
           </div>
           <div class="card">
             <h3>Pemasangan Cepat</h3>
@@ -433,7 +236,7 @@
           </div>
           <div class="card">
             <h3>Dukungan 24/7</h3>
-            <p class="muted">Saluran bantuan lewat WhatsApp, telepon, &amp; tiket. Tindak lanjut maksimal 1×24 jam.</p>
+            <p class="muted">Saluran bantuan lewat WhatsApp, telepon, & tiket. Tindak lanjut maksimal 1×24 jam.</p>
           </div>
         </div>
       </div>
@@ -447,84 +250,132 @@
             <h2 class="section-title">Paket Internet</h2>
             <p class="muted">Harga hemat, kuota fair use, dan kecepatan stabil di jam sibuk.</p>
           </div>
-          <div><span class="chip">Harga sudah termasuk PPN*</span></div>
+          <div>
+            <span class="chip">Harga sudah termasuk PPN*</span>
+          </div>
         </div>
 
         <div class="plans">
-          <!-- Paket 1 -->
-          <div class="plan" data-pkg="Paket 1" data-speed="15 Mbps" data-price="Rp165.000" data-wa="6282313570931" aria-label="Pesan Paket 1 15 Mbps Rp165.000">
+          <div class="plan">
             <div class="row" style="justify-content: space-between">
               <span class="speed">15 Mbps</span>
               <span class="muted">Paket 1</span>
             </div>
-            <div class="price">Rp165.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <div class="price">Rp165.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
             <ul class="features">
               <li>✔️ Unlimited</li>
               <li>✔️ 1 perangkat IPTV</li>
               <li>✔️ Router standar</li>
             </ul>
-            <a class="btn order-wa" href="#" role="button" aria-label="Langganan Paket 1 via WhatsApp">Langganan</a>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2015Mbps%20Rp165rb" target="_blank" rel="noopener">Langganan</a>
           </div>
 
-          <!-- Paket 2 (Best) -->
-          <div class="plan best" data-pkg="Paket 2" data-speed="20 Mbps" data-price="Rp215.000" data-wa="6282313570931" aria-label="Pesan Paket 2 20 Mbps Rp215.000">
+          <div class="plan best">
             <div class="row" style="justify-content: space-between">
               <span class="speed">20 Mbps</span>
               <span class="muted">Paket 2</span>
             </div>
-            <div class="price">Rp215.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <div class="price">Rp215.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
             <ul class="features">
               <li>✔️ Unlimited</li>
               <li>✔️ Router dual-band</li>
               <li>✔️ Bantuan prioritas</li>
             </ul>
-            <a class="btn order-wa" href="#" role="button" aria-label="Langganan Paket 2 via WhatsApp">Langganan</a>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2020Mbps%20Rp215rb" target="_blank" rel="noopener">Langganan</a>
           </div>
 
-          <!-- Paket 3 -->
-          <div class="plan" data-pkg="Paket 3" data-speed="30 Mbps" data-price="Rp305.000" data-wa="6282313570931" aria-label="Pesan Paket 3 30 Mbps Rp305.000">
+          <div class="plan">
             <div class="row" style="justify-content: space-between">
               <span class="speed">30 Mbps</span>
               <span class="muted">Paket 3</span>
             </div>
-            <div class="price">Rp305.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <div class="price">Rp305.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
             <ul class="features">
               <li>✔️ Unlimited</li>
               <li>✔️ Router dual-band</li>
               <li>✔️ Promo: Bebas instalasi*</li>
             </ul>
-            <a class="btn order-wa" href="#" role="button" aria-label="Langganan Paket 3 via WhatsApp">Langganan</a>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2030Mbps%20Rp305rb" target="_blank" rel="noopener">Langganan</a>
           </div>
 
-          <!-- Paket 4 -->
-          <div class="plan" data-pkg="Paket 4" data-speed="50 Mbps" data-price="Rp410.000" data-wa="6282313570931" aria-label="Pesan Paket 4 50 Mbps Rp410.000">
+          <div class="plan">
             <div class="row" style="justify-content: space-between">
               <span class="speed">50 Mbps</span>
               <span class="muted">Paket 4</span>
             </div>
-            <div class="price">Rp410.000<span style="font-size: 0.9rem; font-weight: 600">/bln</span></div>
+            <div class="price">Rp410.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
             <ul class="features">
               <li>✔️ Unlimited</li>
               <li>✔️ Router dual-band</li>
               <li>✔️ Opsi IP Publik</li>
             </ul>
-            <a class="btn order-wa" href="#" role="button" aria-label="Langganan Paket 4 via WhatsApp">Langganan</a>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2050Mbps%20Rp410rb" target="_blank" rel="noopener">Langganan</a>
           </div>
         </div>
+            <div class="price">Rp169.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
+            <ul class="features">
+              <li>✔️ Unlimited</li>
+              <li>✔️ 1 perangkat IPTV</li>
+              <li>✔️ Router standar</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2015Mbps" target="_blank" rel="noopener">Langganan</a>
+          </div>
 
-        <div class="card" style="margin-top: 12px">
+          <div class="plan best">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">30 Mbps</span>
+              <span class="muted">Favorit</span>
+            </div>
+            <div class="price">Rp219.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
+            <ul class="features">
+              <li>✔️ Unlimited</li>
+              <li>✔️ Router dual-band</li>
+              <li>✔️ Bantuan prioritas</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2030Mbps" target="_blank" rel="noopener">Langganan</a>
+          </div>
+
+          <div class="plan">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">50 Mbps</span>
+              <span class="muted">Keluarga</span>
+            </div>
+            <div class="price">Rp299.000<span style="font-size: .9rem; font-weight: 600">/bln</span></div>
+            <ul class="features">
+              <li>✔️ Unlimited</li>
+              <li>✔️ Router dual-band</li>
+              <li>✔️ Bebas instalasi* promo</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6282313570931?text=Minat%20Paket%2050Mbps" target="_blank" rel="noopener">Langganan</a>
+          </div>
+
+          <div class="plan">
+            <div class="row" style="justify-content: space-between">
+              <span class="speed">Dedicated</span>
+              <span class="muted">Bisnis</span>
+            </div>
+            <div class="price">Custom</div>
+            <ul class="features">
+              <li>✔️ SLA tertulis</li>
+              <li>✔️ IP Publik / Static</li>
+              <li>✔️ Monitoring & laporan</li>
+            </ul>
+            <a class="btn" href="https://wa.me/6282313570931?text=Konsultasi%20Internet%20Bisnis%20OZNET" target="_blank" rel="noopener">Konsultasi</a>
+          </div>
+        </div>
+        <div class="card" style="margin-top:12px">
           <strong>Catatan:</strong>
-          <ul class="features" style="margin: 8px 0 0">
+          <ul class="features" style="margin:8px 0 0">
             <li>✔️ Layanan full <em>unlimited</em> 1 bulan, harga bulanan tidak naik selamanya.*</li>
             <li>✔️ Biaya registrasi/instalasi Rp300.000.</li>
             <li>✔️ Gratis pemasangan/instalasi untuk berlangganan minimal 30 Mbps.</li>
           </ul>
-          <p class="muted" style="margin: 8px 0 0">*Syarat &amp; ketentuan berlaku.</p>
+          <p class="muted" style="margin:8px 0 0">*Syarat & ketentuan berlaku.</p>
         </div>
       </div>
     </section>
 
-    <!-- CAKUPAN AREA -->
+    <!-- CAKUPAN AREA (KOTA TEGAL) -->
     <section id="cakupan">
       <div class="container">
         <h2 class="section-title">Cakupan Area</h2>
@@ -535,7 +386,7 @@
       </div>
     </section>
 
-    <!-- TENTANG -->
+    <!-- TENTANG KAMI -->
     <section id="tentang">
       <div class="container">
         <h2 class="section-title">Tentang OZNET</h2>
@@ -547,13 +398,13 @@
             </p>
             <div class="divider"></div>
             <div class="row">
-              <span class="chip">NOC &amp; Monitoring</span>
+              <span class="chip">NOC & Monitoring</span>
               <span class="chip">Teknisi Bersertifikat</span>
               <span class="chip">Billing Otomatis</span>
             </div>
           </div>
           <div class="card">
-            <h3>Legal &amp; Kontak</h3>
+            <h3>Legal & Kontak</h3>
             <a class="btn" href="#kontak">Kirim Pesan</a>
           </div>
         </div>
@@ -597,15 +448,9 @@
             <h2 class="section-title">Hubungi Kami</h2>
             <p class="muted">Tanyakan ketersediaan alamat, promo terbaru, atau jadwalkan survey.</p>
             <form class="row" onsubmit="sendWA(event)">
-              <input aria-label="Nama" required placeholder="Nama" id="f_name" style="flex: 1; min-width: 200px; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: #fff; color: var(--text)" />
-              <input
-                aria-label="Alamat"
-                required
-                placeholder="Alamat Lengkap di Kota Tegal"
-                id="f_addr"
-                style="flex: 2; min-width: 260px; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: #fff; color: var(--text)"
-              />
-              <select aria-label="Paket" id="f_pkg" style="padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: #fff; color: var(--text)">
+              <input aria-label="Nama" required placeholder="Nama" id="f_name" style="flex: 1; min-width: 200px; padding: .9rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: #ffffff; color: var(--text)" />
+              <input aria-label="Alamat" required placeholder="Alamat Lengkap di Kota Tegal" id="f_addr" style="flex: 2; min-width: 260px; padding: .9rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: #ffffff; color: var(--text)" />
+              <select aria-label="Paket" id="f_pkg" style="padding: .9rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: #ffffff; color: var(--text)">
                 <option>Paket 15 Mbps</option>
                 <option selected>Paket 30 Mbps</option>
                 <option>Paket 50 Mbps</option>
@@ -625,7 +470,7 @@
 
     <footer>
       <div class="container row" style="justify-content: space-between">
-        <div>© <span id="year"></span> OZNET ISP — BY HALLOLABS</div>
+        <div>© <span id="year"></span> OZNET ISP — Kota Tegal</div>
         <div class="muted">Dibuat dengan ♥ untuk jaringan yang lebih baik.</div>
       </div>
     </footer>
@@ -660,32 +505,7 @@
         });
       });
 
-      // Klik card paket => WhatsApp
-      function waFromCard(card) {
-        const phone = card.dataset.wa || "6282313570931";
-        const pkg = card.dataset.pkg || "";
-        const speed = card.dataset.speed || "";
-        const price = card.dataset.price || "";
-        const msg = `Halo OZNET, saya ingin berlangganan ${pkg} ${speed} (${price}/bln). Mohon info ketersediaan & pemasangan.`;
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-        window.open(url, "_blank");
-      }
-      document.querySelectorAll(".plan").forEach((card) => {
-        card.addEventListener("click", (e) => {
-          if (e.target.closest("a") && !e.target.classList.contains("order-wa")) return;
-          waFromCard(card);
-        });
-        const btn = card.querySelector(".order-wa");
-        if (btn) {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            waFromCard(card);
-          });
-        }
-      });
-
-      // WA helper (form)
+      // WA helper
       function sendWA(e) {
         e.preventDefault();
         const name = document.getElementById("f_name").value.trim();
@@ -696,7 +516,7 @@
         window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
       }
 
-      // Tahun footer
+      // Year
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
